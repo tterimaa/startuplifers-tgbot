@@ -1,0 +1,29 @@
+{
+    "jobs": [
+        {
+            "id": "pm1",
+            "name": "Fullstack developer",
+            "description": "Developing fullstack apps"
+        },
+        {
+            "id": "3Er",
+            "name": "AI engineer",
+            "description": "Fancy AI stuff"
+        },
+        {
+            "id": "P0m",
+            "name": "Designer",
+            "description": "Cool designs and stuff"
+        },
+        {
+            "id": "3gL",
+            "name": "Software engineer",
+            "description": "Software engineering job"
+        },
+        {
+            "id": "rde",
+            "name": "Product management trainee",
+            "description": "Product management"
+        }
+    ]
+}
