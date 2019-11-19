@@ -28,12 +28,14 @@ const arraysEqual = (a, b) => {
 
 const cronJob = async () => {
     const jobsLocal = jobService.readJobs()
-    console.log(jobsLocal)
     const inApi = await jobService.getAll(url)
-    console.log(inApi)
+    if(!arraysEqual(jobsLocal, inApi)) { // Job listing changed or empty
+      const newJobs = inApi.filter(job => !jobsLocal.map(job => job.id).includes(job.id))
 
-    if(!arraysEqual(jobsLocal, inApi)) {
-      console.log('JOB LISTING HAS CHANGED IN API (or local is empty)')
+      for(let newJob of newJobs) {
+        await bot.sendMessage('@testikanava123', newJob.name)
+      }
+
       jobService.writeJobs(inApi)
     }
 }
